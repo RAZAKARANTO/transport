@@ -1,0 +1,37 @@
+{% extends 'subscribe_base.html' %}
+{% block subscribe %}
+<div>
+    <h1>SIGN UP</h1>
+</div>
+<div>
+    <form method="POST" name="subscribe_form">
+        <div>
+            <label for="name">FIRSTNAME</label>
+            <input type="text" name="firstname" value="{{request.form['firstname']}}">
+        </div>
+        <div>
+            <label for="lastname">LASTNAME</label>
+            <input type="text" name="lastname" value="{{request.form['lastname']}}">
+        </div>
+        <div>
+            <label for="username" >USERNAME</label>
+            <input type="text" name="username" value="{{request.form['username']}}">
+        </div>
+        <div>
+            <label for="password">PASSWORD</label>
+            <input type="password" name="password" value="{{request.form['password']}}">
+        </div>
+        <div>
+            <label for="confirm_password">CONFIRM PASSWORD</label>
+            <input type="password" name="confirm_password" value="{{request.form['confirm_password']}}">
+        </div>
+        <div>
+            <label for="CIN">NUMBER CIN</label>
+            <input type="text" name="CIN" value="{{request.form['nb_CIN']}}">
+        </div>
+        <div>
+            <button>CREATE ACOUNT</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

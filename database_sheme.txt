@@ -1,0 +1,48 @@
+CREATE TABLE cars_transport (
+id_car INT NOT NULL AUTO_INCREMENT,
+immatricul CHAR (7) NOT NULL,
+model CHAR NOT NULL,
+nb_place INT NOT NULL,
+prix_h FLOAT NOT NULL,
+PRIMARY KEY (id_car)
+);
+
+CREATE TABLE conduct(
+id_conduct INT NOT NULL  AUTO_INCREMENT,
+CIN INT ,
+conduct_name CHAR NOT NULL,
+conduct_firstname CHAR NOT NULL,
+PRIMARY KEY (id_conduct)
+);
+
+CREATE TABLE usersite(
+id_user INT NOT NULL AUTO_INCREMENT,
+name_user CHAR NOT NULL,
+first_nameuser CHAR NOT NULL,
+login_user CHAR NOT NULL,
+mdp_user CHAR NOT NULL,
+status_user CHAR NOT NULL,
+PRIMARY KEY (id_user)
+);
+
+CREATE TABLE commande (
+id_command INT NOT NULL AUTO_INCREMENT,
+nb_heure INT ,
+date_command DATE NOT NULL,
+id_car INT NOT NULL ,
+id_user INT NOT NULL,
+FOREIGN KEY (id_car) REFERENCES cars_transport (id_car),
+FOREIGN KEY (id_user) REFERENCES usersite (id_user),
+PRIMARY KEY (id_command)
+);
+
+CREATE TABLE driveby(
+id_driveby INT NOT NULL AUTO_INCREMENT,
+id_car INT NOT NULL,
+id_conduct INT NOT NULL,
+date_command DATE NOT NULL,
+FOREIGN KEY (id_car) REFERENCES cars_transport (id_car),
+FOREIGN KEY (id_conduct) REFERENCES conduct (id_conduct),transport
+PRIMARY KEY(id_driveby)
+);
+usersite
